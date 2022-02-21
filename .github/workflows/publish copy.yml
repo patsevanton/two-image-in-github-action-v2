@@ -36,7 +36,7 @@ jobs:
             load: false
             push: false
             tags: |
-              ${{ env.DOCKER_TARGET_REPOSITORY }}/${{ matrix.service }}:1
+              ${{ env.REGISTRY }}/${{ matrix.service }}:1
             outputs: type=cacheonly
             cache-from: type=gha, scope=${{ matrix.service }}
             cache-to: type=gha,mode=max, scope=${{ matrix.service }}
