@@ -9,7 +9,7 @@ env:
 
 jobs:
   build_push_services_image:
-      name: Build and publish Docker images for services on github
+      name: Build and publish
       runs-on: ubuntu-latest
       strategy:
         matrix:
@@ -36,6 +36,6 @@ jobs:
             load: false
             push: false
             tags: |
-              ${{ env.DOCKER_TARGET_REPOSITORY }}/${{ matrix.service }}
+              ${{ env.DOCKER_TARGET_REPOSITORY }}-${{ matrix.service }}:1
             cache-from: type=gha, scope=${{ matrix.service }}
             cache-to: type=gha,mode=max, scope=${{ matrix.service }}
