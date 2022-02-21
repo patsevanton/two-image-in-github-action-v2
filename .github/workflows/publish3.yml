@@ -1,4 +1,4 @@
-name: Build & publish drill4net images
+name: publish3
 on:
   release:
     types: [published]
